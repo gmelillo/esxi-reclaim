@@ -1,0 +1,4 @@
+[vmware]
+hostname = hostname.example.com
+username = root
+password = root_password

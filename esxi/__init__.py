@@ -2,7 +2,7 @@ __author__ = 'gabriel'
 from paramiko import SSHClient, AutoAddPolicy
 from socket import error as socket_error
 from re import search
-from .storage import ISCSIStorage
+from storage import ISCSIStorage
 import logging
 
 
@@ -75,3 +75,9 @@ class ESXi(object):
             if m is not None:
                 return m.group(position)
         return "N/A"
+
+    def reclaim_iscsi_space(self, iscsi_target):
+        if not isinstance(iscsi_target, ISCSIStorage):
+            raise ValueError('ISCSIStorage instance required')
+
+        return self._connection.exec_command('esxcli storage vmfs unmap -volume-label={}'.format(iscsi_target.Name))
