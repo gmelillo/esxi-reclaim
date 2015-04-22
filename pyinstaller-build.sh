@@ -13,5 +13,6 @@ python setup.py install
 cd ..
 pyinstaller -F -n esxi-reclaim -s --paths=esxi-reclaim-master/ esxi-reclaim-master/esxireclaim/cmd.py
 deactivate
-mv dist/esxi-reclaim /usr/local/bin/
+mv dist/esxi-reclaim .
+mv esxi-reclaim-master/esxi.ini.sample esxi.ini
 rm -rf build dist esxi-reclaim-master esxi-reclaim.spec esxi-reclaim_venv master.zip
