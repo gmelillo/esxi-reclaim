@@ -3,8 +3,8 @@ __author__ = 'gabriel'
 from argparse import ArgumentParser
 from sys import exit
 from os.path import isfile
-from config import ConfigurationINI
-from __init__ import ESXi, ESXiConnectionError
+from esxireclaim.config import ConfigurationINI
+from esxireclaim import ESXi, ESXiConnectionError
 import logging
 import logging.config
 
