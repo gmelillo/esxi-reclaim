@@ -8,7 +8,7 @@ wget https://github.com/gmelillo/esxi-reclaim/archive/master.zip
 unzip master.zip
 pip install -r esxi-reclaim-master/requirements.txt
 pip install pyinstaller
-sed -i "s/misc.check_not_running_as_root()//g" esxi-reclaim_venv/lib/python2.6/site-packages/PyInstaller/main.py
+#sed -i "s/misc.check_not_running_as_root()//g" esxi-reclaim_venv/lib/python2.6/site-packages/PyInstaller/main.py
 cd esxi-reclaim-master
 python setup.py install
 cd ..
