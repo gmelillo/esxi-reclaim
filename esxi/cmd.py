@@ -5,6 +5,8 @@ from sys import exit
 from os.path import isfile
 from config import ConfigurationINI
 from __init__ import ESXi, ESXiConnectionError
+import logging
+import logging.config
 
 CONFIG_FILE = '/etc/esxi.ini'
 DATABASE = '/tmp/esxi.db'
@@ -30,6 +32,7 @@ def run():
         exit()
 
     conf = ConfigurationINI(CONFIG_FILE)
+    logging.config.fileConfig(CONFIG_FILE)
 
     if conf['vmware']['hostname'] is None:
         print ('Invalid hostname')
@@ -55,9 +58,21 @@ def run():
         print(e.message)
         exit(0)
 
+    storage_list = esxi.get_storage_list()
+
     if args.scan:
-        for iscsi in esxi.get_storage_list():
-            print('- {0}'.format(iscsi.Name))
+        for iscsi in storage_list:
+            logging.info('- {0}'.format(iscsi.Name))
+
+    if args.reclaim and len(storage_list) > 0:
+        for iscsi in storage_list:
+            if iscsi.reclaim_supported:
+                logging.info("Reclaim space for {0}".format(iscsi.Name))
+                esxi.reclaim_iscsi_space(iscsi)
+            else:
+                logging.info("Skip reclaim for {0}".format(iscsi.Name))
+    elif args.reclaim and len(storage_list) == 0:
+        logging.info("No iscsi target elegible for reclaim")
 
     return 0
 
