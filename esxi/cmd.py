@@ -62,7 +62,10 @@ def run():
 
     if args.scan:
         for iscsi in storage_list:
-            logging.info('- {0}'.format(iscsi.Name))
+            logging.info('- {0}({1})'.format(iscsi.Name, iscsi.DName))
+            logging.debug('    + reclaim_supported : {0}'.format(iscsi.reclaim_supported))
+            logging.debug('    + thin_provision_status : {0}'.format(iscsi.thin_provision_status))
+            logging.debug('    + delete_status : {0}'.format(iscsi.delete_status))
 
     if args.reclaim and len(storage_list) > 0:
         for iscsi in storage_list:
