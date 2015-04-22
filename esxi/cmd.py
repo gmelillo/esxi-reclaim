@@ -7,10 +7,11 @@ from config import ConfigurationINI
 from __init__ import ESXi, ESXiConnectionError
 
 CONFIG_FILE = '/etc/esxi.ini'
+DATABASE = '/tmp/esxi.db'
 
 
 def run():
-    global CONFIG_FILE
+    global CONFIG_FILE, DATABASE
     parser = ArgumentParser()
     parser.add_argument('-c', '--config', help='Configuration file', type=str)
     parser.add_argument('-s', '--scan', help='Scan esxi for new ISCSI targets.', action='store_true')
@@ -39,6 +40,8 @@ def run():
     if conf['vmware']['password'] is None:
         print ('Invalid hostname')
         exit()
+    if conf['db']['path'] is not None:
+        DATABASE = conf['db']['path']
 
     esxi = ESXi(
         hostname=conf['vmware']['hostname'],

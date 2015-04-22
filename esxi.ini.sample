@@ -2,3 +2,6 @@
 hostname = hostname.example.com
 username = root
 password = root_password
+
+[db]
+path = /path/to/sqlite/db
