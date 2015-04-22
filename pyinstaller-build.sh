@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-/usr/bin/yum install -y python-virtualenv gcc unzip
-cd /opt
+#/usr/bin/yum install -y python-virtualenv gcc unzip
 virtualenv esxi-reclaim_venv
 source esxi-reclaim_venv/bin/activate
 wget https://github.com/gmelillo/esxi-reclaim/archive/master.zip
