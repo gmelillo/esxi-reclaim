@@ -1,5 +1,8 @@
 from distutils.core import setup
-from pip.req import parse_requirements
+try:
+    from pip.req import parse_requirements
+except ImportError:
+    from pip._internal.req import parse_requirements
 from setuptools.command.develop import develop
 
 CLASSIFIERS = [
@@ -24,8 +27,8 @@ setup(
         "argparse==1.2.1",
         "configparser==3.3.0r2",
         "ecdsa==0.13",
-        "paramiko==1.15.2",
-        "pycrypto==2.6.1",
+        "paramiko==1.17.6",
+        "pycryptodome==3.6.4",
         "wsgiref==0.1.2"
     ],
     classifiers=CLASSIFIERS,
