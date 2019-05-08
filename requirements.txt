@@ -1,4 +1,4 @@
-argparse==1.2.1
+argparse==1.4.0
 configparser==3.3.0r2
 ecdsa==0.13
 paramiko==1.17.6
