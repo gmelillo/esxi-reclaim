@@ -10,7 +10,6 @@ CLASSIFIERS = [
     'Intended Audience :: Information Technology',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
 ]
 
@@ -24,11 +23,11 @@ setup(
     description="Reclaim storage on thin on thin lun for vmware ESXi 5.X",
     url="https://github.com/gmelillo/esxi-reclaim",
     install_requires=[
-        "argparse==1.2.1",
-        "configparser==3.3.0r2",
-        "ecdsa==0.13",
-        "paramiko==1.17.6",
-        "pycryptodome==3.6.4",
+        "argparse==1.4.0",
+        "configparser==3.7.4",
+        "ecdsa==0.13.2",
+        "paramiko==2.4.2",
+        "pycryptodome==3.8.1",
         "wsgiref==0.1.2"
     ],
     classifiers=CLASSIFIERS,
