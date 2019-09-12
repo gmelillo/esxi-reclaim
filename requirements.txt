@@ -1,5 +1,5 @@
 argparse==1.4.0
-configparser==4.0.1
+configparser==4.0.2
 ecdsa==0.13.2
 paramiko==2.6.0
 pycryptodome==3.9.0
