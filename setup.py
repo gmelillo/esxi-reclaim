@@ -24,7 +24,7 @@ setup(
     url="https://github.com/gmelillo/esxi-reclaim",
     install_requires=[
         "argparse==1.4.0",
-        "configparser==4.0.2",
+        "configparser==5.0.0",
         "ecdsa==0.15",
         "paramiko==2.7.1",
         "pycryptodome==3.9.7",
