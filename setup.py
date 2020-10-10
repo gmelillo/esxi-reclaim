@@ -26,7 +26,7 @@ setup(
         "argparse==1.4.0",
         "configparser==5.0.1",
         "ecdsa==0.15",
-        "paramiko==2.7.1",
+        "paramiko==2.7.2",
         "pycryptodome==3.9.8",
         "wsgiref==0.1.2"
     ],
