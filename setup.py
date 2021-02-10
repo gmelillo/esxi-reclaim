@@ -27,7 +27,7 @@ setup(
         "configparser==5.0.1",
         "ecdsa==0.16.1",
         "paramiko==2.7.2",
-        "pycryptodome==3.9.9",
+        "pycryptodome==3.10.1",
         "wsgiref==0.1.2"
     ],
     classifiers=CLASSIFIERS,
