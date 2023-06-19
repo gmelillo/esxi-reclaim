@@ -25,7 +25,7 @@ setup(
     install_requires=[
         "argparse==1.4.0",
         "configparser==5.0.1",
-        "ecdsa==0.17.0",
+        "ecdsa==0.18.0",
         "paramiko==2.7.2",
         "pycryptodome==3.9.9",
         "wsgiref==0.1.2"
